@@ -1,26 +1,189 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+    --pc: #142b6f;
+    --sc: #ffd601;
+    --text: #141212;
+    --white: #ffffff;
+    --acc: #2B7FFF;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html{
+    scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.nav{
+    color: var(--sc);
+    cursor: pointer;
+}
+.navlinks{
+    color: var(--pc);
+
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.logo{
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--pc);
+
+}
+.logo span{
+    color: var(--sc);
+
+}
+.sidebar{
+    background: var(--white);
+   
+
+}
+.sidebar .nav-link{
+    color: var(--sc);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.sidebar .nav-link:hover{
+    color: var(--pc);
+}
+
+.sidebar .close{
+    color: var(--pc);
+    cursor: pointer;
+}
+
+
+.txt{
+    color: var(--white);
+}
+
+.title{
+    color: var(--sc);
+}
+
+.bn{
+    color: var(--sc);
+    border-radius: 30px;
+    border: 1px solid var(--pc);
+    
+}
+.bn:hover{
+    transform: scale(1.1);
+    background: var(--pc);
+    color: var(--white);
+
+}
+
+.ct{
+    color: var(--white);
+    background: var(--sc);
+    border: 1px solid var(--pc);
+    border-radius: 30px;
+}
+
+.ct:hover{
+    background: var(--pc);
+    color: var(--sc);
+    transform: scale(1.1);
+
+}
+
+.abt{
+    position: relative;
+    font-weight: 800;
+    font-size: 1.5rem;
+    background: transparent;
+    color: var(--pc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    span{
+        position: relative;
+        right:10px;
+        text-transform: lowercase;
+        color: var(--sc);
+        padding: 0;
+        font-size:0.8rem;
+        font-weight: 600;
+
+    }
+}
+.abtc h2{
+    color: var(--pc);
+    font-size: 0.8rem;
+    padding: 0;
+}
+.abtc h2 span{
+    color: var(--sc);
+    font-size: 2.5rem;
+}
+
+.abtc p{
+    color: var(--text);
+    letter-spacing: 3px;
+}
+
+.ctl{
+    color: var(--sc);
+    border: 1px solid var(--sc);
+    border-radius: 30px;
+    background: var(--pc);
+
+}
+.ctl:hover{
+    color: var(--white);
+    background: var(--sc);
+    border: 1px solid var(--pc);
+}
+.align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arr{
+    color: var(--pc);
+    background-color: var(--sc);
+}
+
+.card{
+    background: var(--pc);
+
+}
+.card .count{
+    color: var(--sc);
+}
+.card .txt{
+    color: var(--white);
+
+}
+.card:hover{
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+.socials .icon{
+    background-color: var(--pc);
+
+}
+.socials .icon:hover{
+    background: var(--sc);
+    transform: scale(1.1);
+    color: var(--white);
+}
+
+.auto-contact{
+    color: var(--sc);
+    font-size: 1rem;
+}
+
+.accent{
+    color: var(--acc);
+}
+.tc{
+    color: var(--sc);
+}
+footer{
+    background: var(--pc);
+
 }
