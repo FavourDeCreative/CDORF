@@ -35,7 +35,7 @@ export default function Navbar() {
     gsap.to(mobileMenuRef.current, {
       x: isOpen ? "0%" : "100%",
       duration: 0.5,
-      ease: isOpen ? "power4.out" : "power3.inOut",
+      ease: "power4.out",
     });
   }, [isOpen]);
 
@@ -47,12 +47,10 @@ export default function Navbar() {
         className="navbar fixed top-0 left-0 z-50 w-full bg-white"
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-          {/* LOGO */}
           <Link href="/" className="logo relative z-50">
             CDORF <span>.ng</span>
           </Link>
 
-          {/* DESKTOP */}
           <div className="hidden items-center gap-10 md:flex">
             {navLinks.map((link) => (
               <Link
@@ -66,7 +64,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* MOBILE BUTTON */}
           <button onClick={() => setIsOpen(true)} className="md:hidden nav">
             <Menu size={26} />
           </button>
@@ -77,24 +74,23 @@ export default function Navbar() {
       <div
         ref={mobileMenuRef}
         className="
-          sidebar
-          fixed top-0 right-0 z-[100]
+          sidebar fixed top-0 right-0 z-[100]
           h-screen w-[320px]
-          translate-x-full
           bg-black text-white
           flex flex-col
+          translate-x-full
+          overflow-hidden
         "
+        style={{ transform: "translateX(100%)" }}
       >
-        {/* TOP SECTION (SCROLLABLE) */}
+        {/* TOP */}
         <div className="flex-1 overflow-y-auto p-8 pb-6">
-          {/* CLOSE */}
           <div className="mb-14 flex justify-end">
             <button onClick={() => setIsOpen(false)} className="close">
               <X size={24} />
             </button>
           </div>
 
-          {/* LINKS */}
           <div className="flex flex-col gap-6">
             {navLinks.map((link) => (
               <Link
@@ -114,17 +110,17 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* BOTTOM SOCIALS (ALWAYS VISIBLE) */}
-        <div className="border-t border-white/10 p-6 socials shrink-0">
+        {/* BOTTOM SOCIALS */}
+        <div className="border-t border-white/10 p-6 shrink-0">
           <p className="mb-4 text-xs uppercase tracking-[0.3em] text-zinc-500">
             Follow Us
           </p>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <Link
               href="https://facebook.com"
               target="_blank"
-              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
+              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400 soc"
             >
               <FaFacebookF size={14} />
             </Link>
@@ -132,7 +128,7 @@ export default function Navbar() {
             <Link
               href="https://instagram.com"
               target="_blank"
-              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
+              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400 soc"
             >
               <FaInstagram size={14} />
             </Link>
@@ -140,7 +136,7 @@ export default function Navbar() {
             <Link
               href="https://tiktok.com"
               target="_blank"
-              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
+              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400 soc"
             >
               <FaTiktok size={14} />
             </Link>
@@ -148,7 +144,7 @@ export default function Navbar() {
             <Link
               href="https://wa.me/2340000000000"
               target="_blank"
-              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
+              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400 soc"
             >
               <FaWhatsapp size={16} />
             </Link>

@@ -188,6 +188,14 @@ footer{
 
 }
 
+.soc{
+    color: var(--pc);
+
+}
+.soc:hover{
+    color: var(--sc);
+}
+
 .custom-bullet {
   background: #facc15 !important;
   opacity: 0.5 !important;
