@@ -3,6 +3,7 @@ import "./globals.css";
 
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,6 +25,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Search Console verification (ONLY use if you have meta version) */}
+        <meta
+          name="google-site-verification"
+          content="google-site-verification=bmbjNPH4QWLzy5YjUzgWLtkDnpl1V4x0ZVW99EgBLoQ"
+        />
+      </head>
+
       <body
         className={`
           ${poppins.variable}
@@ -32,9 +41,7 @@ export default function RootLayout({ children }) {
         `}
       >
         <Navbar />
-
         <main>{children}</main>
-
         <Footer />
       </body>
     </html>
