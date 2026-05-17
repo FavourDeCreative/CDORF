@@ -11,11 +11,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const properties = [
-  "/property1.jpg",
-  "/property2.jpg",
-  "/property3.jpg",
-  "/property4.jpg",
-  "/property5.jpg",
+  "/houses/apartment.jpg",
+  "/houses/bungalow.jpg",
+  "/houses/duplex.jpg",
+  "/houses/miniflat.jpg",
+  "/houses/studio.jpg",
 ];
 
 export default function Hero() {
