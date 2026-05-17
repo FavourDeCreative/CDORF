@@ -150,7 +150,7 @@ export default function Navbar() {
 
           <div className="flex flex-wrap items-center gap-3">
             <Link
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/18h1egmKUW/"
               target="_blank"
               rel="noopener noreferrer"
               className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
@@ -159,7 +159,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="https://instagram.com"
+              href="https://www.instagram.com/cdorfautos_31?igsh=NjEwMnRoejN0ZG15"
               target="_blank"
               rel="noopener noreferrer"
               className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
@@ -168,7 +168,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="https://tiktok.com"
+              href="https://www.tiktok.com/@cdorfautos_2022?_r=1&_t=ZS-96RUWvZJxya"
               target="_blank"
               rel="noopener noreferrer"
               className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
@@ -177,7 +177,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="https://wa.me/2347030566546"
+              href="https://wa.me/+2347030566546"
               target="_blank"
               rel="noopener noreferrer"
               className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
