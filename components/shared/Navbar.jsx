@@ -20,6 +20,7 @@ export default function Navbar() {
 
   const navbarRef = useRef(null);
   const mobileMenuRef = useRef(null);
+  const overlayRef = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -29,18 +30,50 @@ export default function Navbar() {
     );
   }, []);
 
+  // LOCK SCROLL + ANIMATE SIDEBAR + OVERLAY
   useEffect(() => {
-    if (!mobileMenuRef.current) return;
+    if (!mobileMenuRef.current || !overlayRef.current) return;
 
-    gsap.to(mobileMenuRef.current, {
-      x: isOpen ? "0%" : "100%",
-      duration: 0.5,
-      ease: "power4.out",
-    });
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+
+      gsap.to(mobileMenuRef.current, {
+        x: "0%",
+        duration: 0.5,
+        ease: "power4.out",
+      });
+
+      gsap.to(overlayRef.current, {
+        opacity: 1,
+        pointerEvents: "auto",
+        duration: 0.3,
+      });
+    } else {
+      document.body.style.overflow = "auto";
+
+      gsap.to(mobileMenuRef.current, {
+        x: "100%",
+        duration: 0.5,
+        ease: "power4.inOut",
+      });
+
+      gsap.to(overlayRef.current, {
+        opacity: 0,
+        pointerEvents: "none",
+        duration: 0.3,
+      });
+    }
   }, [isOpen]);
 
   return (
     <>
+      {/* OVERLAY */}
+      <div
+        ref={overlayRef}
+        onClick={() => setIsOpen(false)}
+        className="fixed inset-0 z-[90] bg-black/60 opacity-0 pointer-events-none"
+      />
+
       {/* NAVBAR */}
       <header
         ref={navbarRef}
@@ -75,15 +108,14 @@ export default function Navbar() {
         ref={mobileMenuRef}
         className="
           sidebar fixed top-0 right-0 z-[100]
-          h-screen w-[320px]
+          h-[100dvh] w-[320px]
           bg-black text-white
           flex flex-col
           translate-x-full
-          overflow-hidden
         "
         style={{ transform: "translateX(100%)" }}
       >
-        {/* TOP */}
+        {/* TOP (SCROLL AREA) */}
         <div className="flex-1 overflow-y-auto p-8 pb-6">
           <div className="mb-14 flex justify-end">
             <button onClick={() => setIsOpen(false)} className="close">
@@ -110,42 +142,26 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* BOTTOM SOCIALS */}
-        <div className="border-t border-white/10 p-6 shrink-0">
+        {/* BOTTOM SOCIALS (FIXED SAFE AREA) */}
+        <div className="shrink-0 border-t border-white/10 p-6 pb-[calc(env(safe-area-inset-bottom)+24px)]">
           <p className="mb-4 text-xs uppercase tracking-[0.3em] text-zinc-500">
             Follow Us
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
-            <Link
-              href="https://facebook.com"
-              target="_blank"
-              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400 soc"
-            >
+            <Link className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400">
               <FaFacebookF size={14} />
             </Link>
 
-            <Link
-              href="https://instagram.com"
-              target="_blank"
-              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400 soc"
-            >
+            <Link className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400">
               <FaInstagram size={14} />
             </Link>
 
-            <Link
-              href="https://tiktok.com"
-              target="_blank"
-              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400 soc"
-            >
+            <Link className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400">
               <FaTiktok size={14} />
             </Link>
 
-            <Link
-              href="https://wa.me/2340000000000"
-              target="_blank"
-              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400 soc"
-            >
+            <Link className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400">
               <FaWhatsapp size={16} />
             </Link>
           </div>
