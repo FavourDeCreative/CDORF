@@ -149,19 +149,39 @@ export default function Navbar() {
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
-            <Link className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400">
+            <Link
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
+            >
               <FaFacebookF size={14} />
             </Link>
 
-            <Link className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400">
+            <Link
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
+            >
               <FaInstagram size={14} />
             </Link>
 
-            <Link className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400">
+            <Link
+              href="https://tiktok.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
+            >
               <FaTiktok size={14} />
             </Link>
 
-            <Link className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400">
+            <Link
+              href="https://wa.me/2347030566546"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="soc flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
+            >
               <FaWhatsapp size={16} />
             </Link>
           </div>
