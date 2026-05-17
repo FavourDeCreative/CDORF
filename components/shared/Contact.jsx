@@ -87,7 +87,7 @@ export default function ContactSection() {
 
           <p className="fade-up mx-auto mt-8 max-w-2xl text-lg text-zinc-400">
             Whether you're looking to buy premium vehicles or luxury properties,
-            we’re ready to help you.
+            we`re ready to help you.
           </p>
         </div>
 

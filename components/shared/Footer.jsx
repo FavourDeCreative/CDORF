@@ -19,7 +19,7 @@ export default function Footer() {
           {/* SOCIALS */}
           <div className="mt-6 flex items-center gap-4">
             <Link
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/1FvzRjTyzX/"
               target="_blank"
               className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition hover:border-yellow-400 hover:text-yellow-400"
             >
@@ -27,7 +27,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://instagram.com"
+              href="https://www.instagram.com/cdorfautos_31?igsh=NjEwMnRoejN0ZG15"
               target="_blank"
               className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition hover:border-yellow-400 hover:text-yellow-400"
             >
@@ -35,7 +35,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://tiktok.com"
+              href="https://www.tiktok.com/@cdorfautos_2022?_r=1&_t=ZS-96RFTvwKID3"
               target="_blank"
               className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition hover:border-yellow-400 hover:text-yellow-400"
             >
@@ -109,8 +109,6 @@ export default function Footer() {
       {/* BOTTOM */}
       <div className="mx-auto mt-14 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-center text-sm text-zinc-500 md:flex-row">
         <p>© {new Date().getFullYear()} CDORF.ng. All rights reserved.</p>
-
-        <p>Built for modern autos & properties.</p>
       </div>
     </footer>
   );
