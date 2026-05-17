@@ -103,7 +103,7 @@ export default function HeroSlider() {
         className="
           absolute
           inset-0
-          bg-black/90
+          bg-black/50
         "
       />
 

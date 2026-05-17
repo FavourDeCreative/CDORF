@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
+
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Autos", href: "/autos" },
@@ -20,24 +21,14 @@ export default function Navbar() {
   const navbarRef = useRef(null);
   const mobileMenuRef = useRef(null);
 
-  // NAVBAR ENTRANCE
   useEffect(() => {
     gsap.fromTo(
       navbarRef.current,
-      {
-        y: -100,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power4.out",
-      },
+      { y: -100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power4.out" },
     );
   }, []);
 
-  // MOBILE MENU
   useEffect(() => {
     if (!mobileMenuRef.current) return;
 
@@ -61,38 +52,41 @@ export default function Navbar() {
             CDORF <span>.ng</span>
           </Link>
 
-          {/* RIGHT SIDE */}
-          <div className="flex items-center gap-10">
-            {/* DESKTOP LINKS */}
-            <div className="hidden items-center gap-10 md:flex">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="navlinks group relative text-[13px] uppercase tracking-[0.25em] transition"
-                >
-                  <span>{link.name}</span>
-
-                  <span className="absolute left-0 bottom-0 h-[1px] w-0 bg-yellow-400 transition-all duration-500 group-hover:w-full" />
-                </Link>
-              ))}
-            </div>
-
-            {/* MOBILE BUTTON */}
-            <button onClick={() => setIsOpen(true)} className="nav md:hidden">
-              <Menu size={26} />
-            </button>
+          {/* DESKTOP */}
+          <div className="hidden items-center gap-10 md:flex">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="navlinks group relative text-[13px] uppercase tracking-[0.25em]"
+              >
+                <span>{link.name}</span>
+                <span className="absolute left-0 bottom-0 h-[1px] w-0 bg-yellow-400 transition-all duration-500 group-hover:w-full" />
+              </Link>
+            ))}
           </div>
+
+          {/* MOBILE BUTTON */}
+          <button onClick={() => setIsOpen(true)} className="md:hidden nav">
+            <Menu size={26} />
+          </button>
         </nav>
       </header>
 
       {/* MOBILE MENU */}
       <div
         ref={mobileMenuRef}
-        className="sidebar fixed top-0 right-0 z-[100] flex h-screen w-[320px] translate-x-full flex-col justify-between p-8 text-white"
+        className="
+          sidebar
+          fixed top-0 right-0 z-[100]
+          h-screen w-[320px]
+          translate-x-full
+          bg-black text-white
+          flex flex-col
+        "
       >
-        {/* TOP */}
-        <div>
+        {/* TOP SECTION (SCROLLABLE) */}
+        <div className="flex-1 overflow-y-auto p-8 pb-6">
           {/* CLOSE */}
           <div className="mb-14 flex justify-end">
             <button onClick={() => setIsOpen(false)} className="close">
@@ -120,48 +114,43 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* BOTTOM SOCIALS */}
-        <div className="border-t border-white/10 pt-8 socials">
-          <p className="mb-6 text-xs uppercase tracking-[0.3em] text-zinc-500">
+        {/* BOTTOM SOCIALS (ALWAYS VISIBLE) */}
+        <div className="border-t border-white/10 p-6 socials shrink-0">
+          <p className="mb-4 text-xs uppercase tracking-[0.3em] text-zinc-500">
             Follow Us
           </p>
 
-          <div className="flex items-center gap-4">
-            {/* FACEBOOK */}
+          <div className="flex items-center gap-3">
             <Link
               href="https://facebook.com"
               target="_blank"
-              className="social-icon flex h-12 w-12 items-center justify-center rounded-full border icon transition hover:border-yellow-400 hover:text-yellow-400"
-          
-          >
-              <FaFacebookF size={16} />
+              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
+            >
+              <FaFacebookF size={14} />
             </Link>
 
-            {/* INSTAGRAM */}
             <Link
               href="https://instagram.com"
               target="_blank"
-              className="social-icon flex h-12 w-12 items-center justify-center rounded-full border icon transition hover:border-yellow-400 hover:text-yellow-400"
+              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
             >
-              <FaInstagram size={16} />
+              <FaInstagram size={14} />
             </Link>
 
-            {/* TIKTOK */}
             <Link
               href="https://tiktok.com"
               target="_blank"
-              className="social-icon flex h-12 w-12 items-center justify-center rounded-full border icon transition hover:border-yellow-400 hover:text-yellow-400"
+              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
             >
-              <FaTiktok size={16} />
+              <FaTiktok size={14} />
             </Link>
 
-            {/* WHATSAPP */}
             <Link
               href="https://wa.me/2340000000000"
               target="_blank"
-              className="social-icon flex h-12 w-12 items-center justify-center rounded-full border icon transition hover:border-yellow-400 hover:text-yellow-400"
+              className="social-icon flex h-11 w-11 items-center justify-center rounded-full border transition hover:border-yellow-400 hover:text-yellow-400"
             >
-              <FaWhatsapp size={18} />
+              <FaWhatsapp size={16} />
             </Link>
           </div>
         </div>

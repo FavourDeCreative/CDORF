@@ -70,7 +70,7 @@ export default function Hero() {
               />
 
               {/* DARK OVERLAY */}
-              <div className="absolute inset-0 bg-black/90" />
+              <div className="absolute inset-0 bg-black/50" />
 
               {/* CONTENT */}
               <div className="absolute inset-0 flex items-center">
