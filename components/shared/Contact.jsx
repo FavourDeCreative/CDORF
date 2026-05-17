@@ -66,76 +66,94 @@ export default function ContactSection() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#071120] px-6 py-32 text-white"
+      className="relative overflow-hidden bg-[#071120] px-4 py-24 text-white sm:px-6 md:py-32"
     >
       {/* GLOW */}
-      <div className="absolute top-0 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-[140px]" />
+      <div className="absolute top-0 left-1/2 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-[140px] md:h-[500px] md:w-[500px]" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* HEADER */}
-        <div className="mx-auto mb-24 max-w-4xl text-center">
-          <div className="fade-up mb-8 flex justify-center">
-            <div className=" px-8 py-3 text-base uppercase tracking-[0.35em] text-blue-300 backdrop-blur-xl">
+        <div className="mx-auto mb-16 max-w-4xl text-center md:mb-24">
+          <div className="fade-up mb-6 flex justify-center md:mb-8">
+            <div className="px-5 py-3 text-sm uppercase tracking-[0.3em] text-blue-300 backdrop-blur-xl md:px-8 md:text-base">
               Contact Us
             </div>
           </div>
 
-          <h2 className="fade-up text-5xl font-semibold md:text-7xl">
+          <h2 className="fade-up text-4xl font-semibold leading-tight sm:text-5xl md:text-7xl">
             Let’s Create Something
-            <span className="block text-blue-400">Exceptional Together</span>
+            <span className="mt-2 block text-blue-400">
+              Exceptional Together
+            </span>
           </h2>
 
-          <p className="fade-up mx-auto mt-8 max-w-2xl text-lg text-zinc-400">
+          <p className="fade-up mx-auto mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg md:mt-8">
             Whether you're looking to buy premium vehicles or luxury properties,
             we`re ready to help you.
           </p>
         </div>
 
         {/* CONTENT */}
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
           {/* LEFT */}
-          <div className="space-y-6">
-            <div className="fade-up rounded-[32px] border border-white/10 bg-white/5 p-8">
-              <div className="flex items-start gap-5">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-500">
-                  <Phone size={24} />
+          <div className="space-y-5 md:space-y-6">
+            {/* PHONE */}
+            <div className="fade-up rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-6 md:rounded-[32px] md:p-8">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 md:h-16 md:w-16">
+                  <Phone size={22} />
                 </div>
-                <div>
-                  <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
+
+                <div className="min-w-0">
+                  <p className="text-xs uppercase tracking-[0.25em] text-zinc-500 sm:text-sm">
                     Phone
                   </p>
-                  <h3 className="text-2xl">+234 703 056 6546</h3>
-                  <h3 className="text-2xl">+234 810 932 0745</h3>
+
+                  <h3 className="mt-2 break-words text-lg font-medium sm:text-xl md:text-2xl">
+                    +234 703 056 6546
+                  </h3>
+
+                  <h3 className="break-words text-lg font-medium sm:text-xl md:text-2xl">
+                    +234 810 932 0745
+                  </h3>
                 </div>
               </div>
             </div>
 
-            <div className="fade-up rounded-[32px] border border-white/10 bg-white/5 p-8">
-              <div className="flex items-start gap-5">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-500">
-                  <Mail size={24} />
+            {/* EMAIL */}
+            <div className="fade-up rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-6 md:rounded-[32px] md:p-8">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 md:h-16 md:w-16">
+                  <Mail size={22} />
                 </div>
-                <div>
-                  <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
+
+                <div className="min-w-0">
+                  <p className="text-xs uppercase tracking-[0.25em] text-zinc-500 sm:text-sm">
                     Email
                   </p>
-                  <h3 className="text-2xl">tijanisaheed341@gmail.com</h3>
+
+                  <h3 className="mt-2 break-all text-lg font-medium sm:text-xl md:text-2xl">
+                    tijanisaheed341@gmail.com
+                  </h3>
                 </div>
               </div>
             </div>
 
-            <div className="fade-up rounded-[32px] border border-white/10 bg-white/5 p-8">
-              <div className="flex items-start gap-5">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-500">
-                  <MapPin size={24} />
+            {/* LOCATION */}
+            <div className="fade-up rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-6 md:rounded-[32px] md:p-8">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 md:h-16 md:w-16">
+                  <MapPin size={22} />
                 </div>
-                <div>
-                  <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
+
+                <div className="min-w-0">
+                  <p className="text-xs uppercase tracking-[0.25em] text-zinc-500 sm:text-sm">
                     Location
                   </p>
-                  <h3 className="text-2xl">
-                    No 15b, isheri holiday inn, grammar school ojodu berger
-                    Lagos state
+
+                  <h3 className="mt-2 text-lg leading-relaxed font-medium sm:text-xl md:text-2xl">
+                    No 15b, Isheri Holiday Inn, Grammar School, Ojodu Berger,
+                    Lagos State
                   </h3>
                 </div>
               </div>
@@ -143,37 +161,37 @@ export default function ContactSection() {
           </div>
 
           {/* FORM */}
-          <div className="fade-up rounded-[36px] border border-white/10 bg-white/5 p-10">
-            <form className="space-y-8" onSubmit={handleSubmit}>
+          <div className="fade-up rounded-[30px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-7 md:rounded-[36px] md:p-10">
+            <form className="space-y-5 md:space-y-8" onSubmit={handleSubmit}>
               <input
                 name="name"
                 type="text"
                 placeholder="Full Name"
-                className="w-full border border-white/10 bg-black/20 px-6 py-5 outline-none focus:border-blue-400"
+                className="w-full rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-sm outline-none transition focus:border-blue-400 sm:px-6 sm:py-5 sm:text-base"
               />
 
               <input
                 name="email"
                 type="email"
                 placeholder="Email Address"
-                className="w-full border border-white/10 bg-black/20 px-6 py-5 outline-none focus:border-blue-400"
+                className="w-full rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-sm outline-none transition focus:border-blue-400 sm:px-6 sm:py-5 sm:text-base"
               />
 
               <textarea
                 name="message"
                 rows={6}
                 placeholder="Your Message"
-                className="w-full resize-none border border-white/10 bg-black/20 px-6 py-5 outline-none focus:border-blue-400"
+                className="w-full resize-none rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-sm outline-none transition focus:border-blue-400 sm:px-6 sm:py-5 sm:text-base"
               />
 
               <button
                 type="submit"
                 disabled={loading}
-                className="group flex items-center gap-4 bg-blue-500 px-8 py-5 uppercase tracking-[0.2em] transition hover:scale-105"
+                className="group flex w-full items-center justify-center gap-4 rounded-2xl bg-blue-500 px-6 py-4 text-xs uppercase tracking-[0.2em] transition hover:scale-[1.02] hover:bg-blue-400 disabled:cursor-not-allowed disabled:opacity-70 sm:w-fit sm:px-8 sm:py-5 sm:text-sm"
               >
                 {loading ? "Sending..." : "Send Message"}
 
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black sm:h-10 sm:w-10">
                   <ArrowUpRight size={18} />
                 </div>
               </button>
