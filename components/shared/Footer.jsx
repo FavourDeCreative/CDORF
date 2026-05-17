@@ -1,29 +1,116 @@
 import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className=" text-white mt-20 py-12 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <h2 className="text-2xl font-bold">CDORF<span className="text-yellow-400">.ng</span></h2>
-          <p className="mt-2 text-green-200 text-sm">Nigeria's trusted marketplace for Autos and Properties.</p>
+    <footer className="mt-20 border-t border-white/10 bg-black px-6 py-14 text-white">
+      <div className="mx-auto flex max-w-7xl flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
+        {/* LEFT */}
+        <div className="max-w-sm">
+          <h2 className="text-3xl font-bold">
+            CDORF<span className="text-yellow-400">.ng</span>
+          </h2>
+
+          <p className="mt-4 text-sm leading-relaxed text-zinc-400">
+            Nigeria’s trusted digital marketplace for premium autos and luxury
+            properties.
+          </p>
+
+          {/* SOCIALS */}
+          <div className="mt-6 flex items-center gap-4">
+            <Link
+              href="https://facebook.com"
+              target="_blank"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition hover:border-yellow-400 hover:text-yellow-400"
+            >
+              <FaFacebookF size={15} />
+            </Link>
+
+            <Link
+              href="https://instagram.com"
+              target="_blank"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition hover:border-yellow-400 hover:text-yellow-400"
+            >
+              <FaInstagram size={16} />
+            </Link>
+
+            <Link
+              href="https://tiktok.com"
+              target="_blank"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition hover:border-yellow-400 hover:text-yellow-400"
+            >
+              <FaTiktok size={15} />
+            </Link>
+
+            <Link
+              href="https://wa.me/2347030566546"
+              target="_blank"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition hover:border-yellow-400 hover:text-yellow-400"
+            >
+              <FaWhatsapp size={17} />
+            </Link>
+          </div>
         </div>
-        <div>
-          <h3 className="font-semibold mb-3">Quick Links</h3>
-          <ul className="space-y-2 text-green-200 text-sm">
-            <li><Link href="/" className="hover:text-white">Home</Link></li>
-            <li><Link href="/autos" className="hover:text-white">Autos</Link></li>
-            <li><Link href="/properties" className="hover:text-white">Properties</Link></li>
-          </ul>
+
+        {/* CENTER */}
+        <div className="flex flex-col gap-5">
+          <h3 className="text-lg font-semibold uppercase tracking-[0.2em]">
+            Quick Links
+          </h3>
+
+          <div className="flex flex-col gap-3 text-sm text-zinc-400">
+            <Link href="/" className="transition hover:text-yellow-400">
+              Home
+            </Link>
+
+            <Link href="/autos" className="transition hover:text-yellow-400">
+              Autos
+            </Link>
+
+            <Link
+              href="/properties"
+              className="transition hover:text-yellow-400"
+            >
+              Properties
+            </Link>
+
+            <Link href="#about" className="transition hover:text-yellow-400">
+              About
+            </Link>
+
+            <Link href="#contact" className="transition hover:text-yellow-400">
+              Contact
+            </Link>
+          </div>
         </div>
-        <div>
-          <h3 className="font-semibold mb-3">Contact</h3>
-          <p className="text-green-200 text-sm">info@cdorf.ng</p>
-          <p className="text-green-200 text-sm">Lagos, Nigeria</p>
+
+        {/* RIGHT */}
+        <div className="max-w-sm">
+          <h3 className="text-lg font-semibold uppercase tracking-[0.2em]">
+            Contact
+          </h3>
+
+          <div className="mt-5 space-y-4 text-sm text-zinc-400">
+            <p>info@cdorf.ng</p>
+
+            <p>
+              No 15b, Isheri Holiday Inn,
+              <br />
+              Grammar School, Ojodu Berger,
+              <br />
+              Lagos State, Nigeria
+            </p>
+
+            <p>+234 7030 566 546</p>
+          </div>
         </div>
       </div>
-      <div className="text-center text-green-400 text-xs mt-10">
-        © {new Date().getFullYear()} CDORF.ng. All rights reserved.
+
+      {/* BOTTOM */}
+      <div className="mx-auto mt-14 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-center text-sm text-zinc-500 md:flex-row">
+        <p>© {new Date().getFullYear()} CDORF.ng. All rights reserved.</p>
+
+        <p>Built for modern autos & properties.</p>
       </div>
     </footer>
   );
