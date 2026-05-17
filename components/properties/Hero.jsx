@@ -54,6 +54,9 @@ export default function Hero() {
         }}
         pagination={{
           clickable: true,
+          bulletClass: "swiper-pagination-bullet custom-bullet",
+          bulletActiveClass:
+            "swiper-pagination-bullet-active custom-bullet-active",
         }}
         className="h-full w-full"
       >
@@ -82,7 +85,7 @@ export default function Hero() {
 
                     <h1 className="fade-up text-3xl font-semibold leading-tight md:text-7xl">
                       Discover Premium
-                      <span className="block text-yellow-400 text-5xl">
+                      <span className="block text-5xl text-yellow-400">
                         Properties in Nigeria
                       </span>
                     </h1>
@@ -95,12 +98,12 @@ export default function Hero() {
                     <div className="fade-up mt-10 flex flex-wrap gap-5">
                       <Link
                         href="#properties"
-                        className="px-8 py-4 transition bn"
+                        className="bn px-8 py-4 transition"
                       >
                         Explore properties
                       </Link>
 
-                      <Link href="#contact" className="px-8 py-4 transition ct">
+                      <Link href="#contact" className="ct px-8 py-4 transition">
                         contact us
                       </Link>
                     </div>
