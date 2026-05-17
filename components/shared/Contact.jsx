@@ -75,7 +75,7 @@ export default function ContactSection() {
         {/* HEADER */}
         <div className="mx-auto mb-24 max-w-4xl text-center">
           <div className="fade-up mb-8 flex justify-center">
-            <div className="bg-white/5 px-8 py-3 text-base uppercase tracking-[0.35em] text-blue-300 backdrop-blur-xl">
+            <div className=" px-8 py-3 text-base uppercase tracking-[0.35em] text-blue-300 backdrop-blur-xl">
               Contact Us
             </div>
           </div>
@@ -104,7 +104,8 @@ export default function ContactSection() {
                   <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
                     Phone
                   </p>
-                  <h3 className="text-2xl">+234 000 000 0000</h3>
+                  <h3 className="text-2xl">+234 703 056 6546</h3>
+                  <h3 className="text-2xl">+234 810 932 0745</h3>
                 </div>
               </div>
             </div>
@@ -118,7 +119,7 @@ export default function ContactSection() {
                   <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
                     Email
                   </p>
-                  <h3 className="text-2xl">hello@cdorf.ng</h3>
+                  <h3 className="text-2xl">tijanisaheed341@gmail.com</h3>
                 </div>
               </div>
             </div>
@@ -132,7 +133,10 @@ export default function ContactSection() {
                   <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
                     Location
                   </p>
-                  <h3 className="text-2xl">Lagos, Nigeria</h3>
+                  <h3 className="text-2xl">
+                    No 15b, isheri holiday inn, grammar school ojodu berger
+                    Lagos state
+                  </h3>
                 </div>
               </div>
             </div>
