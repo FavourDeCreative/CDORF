@@ -99,7 +99,7 @@ export default function Footer() {
           </h3>
 
           <div className="mt-5 space-y-4 text-sm text-zinc-400">
-            <p>info@cdorf.ng</p>
+            <p>tijanisaheed341@gmail.com</p>
 
             <p>
               No 15b, Isheri Holiday Inn,
