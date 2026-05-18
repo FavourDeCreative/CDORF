@@ -1,5 +1,12 @@
+"use client";
+
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTiktok,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { ChevronUp } from "lucide-react";
 
 export default function Footer() {
