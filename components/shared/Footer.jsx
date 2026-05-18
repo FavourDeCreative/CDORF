@@ -1,9 +1,17 @@
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { ChevronUp } from "lucide-react";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <footer className="mt-20 border-t border-white/10 bg-black px-6 py-14 text-white">
+    <footer className="relative mt-20 border-t border-white/10 bg-black px-6 py-14 text-white">
       <div className="mx-auto flex max-w-7xl flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
         {/* LEFT */}
         <div className="max-w-sm">
@@ -110,6 +118,14 @@ export default function Footer() {
       <div className="mx-auto mt-14 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-center text-sm text-zinc-500 md:flex-row">
         <p>© {new Date().getFullYear()} CDORF.ng. All rights reserved.</p>
       </div>
+
+      {/* BACK TO TOP BUTTON */}
+      <button
+        onClick={scrollToTop}
+        className="absolute bottom-6 right-6 flex h-12 w-12 items-center justify-center rounded-full border border-yellow-400/40 bg-yellow-400 text-black shadow-lg transition duration-300 hover:scale-110 hover:bg-yellow-300"
+      >
+        <ChevronUp size={22} />
+      </button>
     </footer>
   );
 }
