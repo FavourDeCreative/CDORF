@@ -38,7 +38,7 @@ export default function Houses() {
     <section
       ref={sectionRef}
       className="relative bg-black px-6 py-24 text-white"
-      id="brands"
+      id="properties"
     >
       <div className="mx-auto max-w-7xl">
         {/* HEADER */}
