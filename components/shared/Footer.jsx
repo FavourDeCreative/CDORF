@@ -1,5 +1,12 @@
+"use client";
+
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTiktok,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { ChevronUp } from "lucide-react";
 
 export default function Footer() {
@@ -99,7 +106,7 @@ export default function Footer() {
           </h3>
 
           <div className="mt-5 space-y-4 text-sm text-zinc-400">
-            <p>info@cdorf.ng</p>
+            <p>tijanisaheed341@gmail.com</p>
 
             <p>
               No 15b, Isheri Holiday Inn,

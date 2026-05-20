@@ -185,7 +185,7 @@ export default function HeroSlider() {
             </Link>
 
             <Link
-              href="/contact"
+              href="#contact"
               className="
                 px-8
                 py-4

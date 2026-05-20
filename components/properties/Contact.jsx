@@ -34,15 +34,16 @@ export default function AutosContact() {
         {/* TOP */}
         <div className="mx-auto mb-16 sm:mb-24 max-w-4xl text-center">
           <h2 className="fade-up text-3xl sm:text-5xl md:text-7xl font-semibold leading-tight">
-            Find The Car You Want
+            What Kind Of House Are You Looking For
             <span className="mt-3 block text-2xl sm:text-4xl md:text-5xl accent">
               We’ll Source It For You
             </span>
           </h2>
 
           <p className="fade-up mx-auto mt-6 sm:mt-8 max-w-2xl text-sm sm:text-lg leading-relaxed text-zinc-400">
-            Tell us the exact car you’re looking for — brand, model, or budget.
-            Our team will help you find, verify, and deliver it anywhere in
+            Tell us the exact House you’re looking for...
+
+            Our team will help you find and verify it anywhere in
             Nigeria.
           </p>
         </div>
@@ -130,20 +131,20 @@ export default function AutosContact() {
               </h3>
 
               <p className="mt-3 text-sm text-zinc-400">
-                Drop the details of the car you want and we’ll get back to you.
+                Drop the details of the house you want and we’ll get back to you.
               </p>
             </div>
 
             <form className="space-y-5 sm:space-y-6">
               <input
                 type="text"
-                placeholder="Car Brand (e.g Toyota)"
+                placeholder="House Type  (e.g Bungalow)"
                 className="w-full border border-white/10 bg-black/20 px-4 sm:px-6 py-4 sm:py-5 text-sm sm:text-base text-white outline-none focus:border-blue-400"
               />
 
               <input
                 type="text"
-                placeholder="Model (e.g Camry 2019)"
+                placeholder="Kind  (e.g Room)"
                 className="w-full border border-white/10 bg-black/20 px-4 sm:px-6 py-4 sm:py-5 text-sm sm:text-base text-white outline-none focus:border-blue-400"
               />
 
