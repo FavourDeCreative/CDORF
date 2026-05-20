@@ -3,11 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactSection() {
   const sectionRef = useRef(null);
+  const formRef = useRef(null);
 
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -28,35 +31,22 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
-
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
+    setLoading(true);
+    setStatus("");
 
     try {
-      setLoading(true);
+      await emailjs.sendForm(
+        "service_aul9iei",
+        "template_tb1pq9l",
+        formRef.current,
+        "PeRykO53f4rW46VbH",
+      );
 
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await res.json();
-
-      if (result.success) {
-        alert("Message sent successfully!");
-        e.target.reset();
-      } else {
-        alert("Failed to send message");
-      }
+      setStatus("success");
+      formRef.current.reset();
     } catch (error) {
-      alert("Something went wrong");
+      console.error(error);
+      setStatus("error");
     } finally {
       setLoading(false);
     }
@@ -81,7 +71,7 @@ export default function ContactSection() {
           </div>
 
           <h2 className="fade-up text-4xl font-semibold leading-tight sm:text-5xl md:text-7xl">
-            Let’s Create Something
+            Let's Create Something
             <span className="mt-2 block text-blue-400">
               Exceptional Together
             </span>
@@ -89,7 +79,7 @@ export default function ContactSection() {
 
           <p className="fade-up mx-auto mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg md:mt-8">
             Whether you're looking to buy premium vehicles or luxury properties,
-            we`re ready to help you.
+            we&apos;re ready to help you.
           </p>
         </div>
 
@@ -162,18 +152,24 @@ export default function ContactSection() {
 
           {/* FORM */}
           <div className="fade-up rounded-[30px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-7 md:rounded-[36px] md:p-10">
-            <form className="space-y-5 md:space-y-8" onSubmit={handleSubmit}>
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="space-y-5 md:space-y-8"
+            >
               <input
-                name="name"
+                name="from_name"
                 type="text"
                 placeholder="Full Name"
+                required
                 className="w-full rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-sm outline-none transition focus:border-blue-400 sm:px-6 sm:py-5 sm:text-base"
               />
 
               <input
-                name="email"
+                name="from_email"
                 type="email"
                 placeholder="Email Address"
+                required
                 className="w-full rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-sm outline-none transition focus:border-blue-400 sm:px-6 sm:py-5 sm:text-base"
               />
 
@@ -181,8 +177,22 @@ export default function ContactSection() {
                 name="message"
                 rows={6}
                 placeholder="Your Message"
+                required
                 className="w-full resize-none rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-sm outline-none transition focus:border-blue-400 sm:px-6 sm:py-5 sm:text-base"
               />
+
+              {/* STATUS */}
+              {status === "success" && (
+                <p className="text-sm font-medium text-green-400">
+                  ✓ Message sent successfully! We&apos;ll get back to you soon.
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="text-sm font-medium text-red-400">
+                  ✗ Something went wrong. Please try again.
+                </p>
+              )}
 
               <button
                 type="submit"
