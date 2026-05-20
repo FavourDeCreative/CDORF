@@ -21,7 +21,7 @@ export const metadata = {
   description: "Buy and Sell Autos & Properties in Nigeria",
 
   verification: {
-    google: "bmbjNPH4QWLzy5YjUzgWLtkDnpl1V4x0ZVW99EgBLoQ",
+    google: "w4uOGvd6-79n2_TbcYfHr38qmItjH-M3fMFfzDhvSUk",
   },
 };
 
