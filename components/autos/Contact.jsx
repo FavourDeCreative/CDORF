@@ -1,11 +1,16 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export default function AutosContact() {
   const sectionRef = useRef(null);
+  const formRef = useRef(null);
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
     gsap.fromTo(
@@ -20,6 +25,30 @@ export default function AutosContact() {
       },
     );
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setStatus("");
+
+    try {
+      await emailjs.sendForm(
+        "service_6wv8twu",
+        "template_xum7r8p",
+        formRef.current,
+        "20c5K5pCz_Dj1Y_TS",
+      );
+
+      setStatus("success");
+      formRef.current.reset();
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section
@@ -134,36 +163,62 @@ export default function AutosContact() {
               </p>
             </div>
 
-            <form className="space-y-5 md:space-y-6">
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="space-y-5 md:space-y-6"
+            >
               <input
+                name="car_brand"
                 type="text"
                 placeholder="Car Brand (e.g Toyota)"
+                required
                 className="w-full border border-white/10 bg-black/20 px-5 py-4 text-sm text-white outline-none focus:border-blue-400 md:px-6 md:py-5 md:text-base"
               />
 
               <input
+                name="car_model"
                 type="text"
                 placeholder="Model (e.g Camry 2019)"
+                required
                 className="w-full border border-white/10 bg-black/20 px-5 py-4 text-sm text-white outline-none focus:border-blue-400 md:px-6 md:py-5 md:text-base"
               />
 
               <input
+                name="budget"
                 type="text"
                 placeholder="Budget Range (Optional)"
                 className="w-full border border-white/10 bg-black/20 px-5 py-4 text-sm text-white outline-none focus:border-blue-400 md:px-6 md:py-5 md:text-base"
               />
 
               <textarea
+                name="message"
                 rows={5}
                 placeholder="Any extra details..."
+                required
                 className="w-full resize-none border border-white/10 bg-black/20 px-5 py-4 text-sm text-white outline-none focus:border-blue-400 md:px-6 md:py-5 md:text-base"
               />
 
+              {/* STATUS */}
+              {status === "success" && (
+                <p className="text-sm font-medium text-green-400">
+                  ✓ Request sent successfully! We&apos;ll contact you shortly.
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="text-sm font-medium text-red-400">
+                  ✗ Something went wrong. Please try again.
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="group inline-flex w-full items-center justify-center gap-4 ct px-6 py-4 text-xs font-medium uppercase tracking-[0.2em] text-white transition hover:scale-105 hover:bg-blue-400 md:w-auto md:px-8 md:py-5 md:text-sm"
+                disabled={loading}
+                className="group inline-flex w-full items-center justify-center gap-4 ct px-6 py-4 text-xs font-medium uppercase tracking-[0.2em] text-white transition hover:scale-105 hover:bg-blue-400 disabled:cursor-not-allowed disabled:opacity-70 md:w-auto md:px-8 md:py-5 md:text-sm"
               >
-                Send Request
+                {loading ? "Sending..." : "Send Request"}
+
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black md:h-10 md:w-10">
                   <ArrowUpRight
                     size={18}
