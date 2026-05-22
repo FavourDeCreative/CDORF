@@ -46,22 +46,25 @@ export default function About() {
 
           {/* HEADING */}
           <h2 className="fade-up text-4xl font-semibold leading-tight md:text-6xl">
-            Nigeria’s Modern Marketplace For
-            <span className="desc mt-2 block">Autos & Properties</span>
+            Fast & Reliable
+            <span className="desc mt-2 block">
+              Vehicle Documentation Services
+            </span>
           </h2>
 
           {/* TEXT */}
           <p className="fade-up mx-auto mt-8 max-w-3xl text-base leading-relaxed md:text-lg">
-            CDORF.NG is redefining how people buy, sell, and discover premium
-            cars and properties in Nigeria. We combine technology, trust, and
-            modern design to create a seamless digital marketplace experience.
+            We help individuals and businesses process important vehicle
+            documents quickly, securely, and without stress. From driver’s
+            license processing to vehicle registration and ownership transfer,
+            CDORF.NG provides trusted documentation support across Nigeria.
           </p>
 
           {/* BUTTON */}
           <div className="fade-up mt-10 flex justify-center">
             <Link
               href="#contact"
-              className="ctl group inline-flex items-center gap-3 px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] transition hover:scale-105"
+              className="ctl group inline-flex items-center gap-3 px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] transition hover:scale-[1.05]"
             >
               Contact Us Today
               <ArrowUpRight
@@ -78,52 +81,58 @@ export default function About() {
           <div className="fade-up relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
             {/* TOP */}
             <div className="mb-14 flex flex-col items-center justify-center text-center">
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full arr">
+              <div className="arr mb-6 flex h-16 w-16 items-center justify-center rounded-full">
                 <ArrowUpRight size={26} />
               </div>
 
               <h3 className="title text-3xl font-semibold">
-                Built For The Future
+                Our Core Services
               </h3>
             </div>
 
             {/* GRID */}
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
               {/* CARD */}
-              <div className="card rounded-2xl border border-white/10 p-6">
-                <h4 className="count mb-3 text-4xl font-bold">100%</h4>
+              <div className="card rounded-2xl border border-white/10 p-6 transition duration-300 hover:scale-[1.05]">
+                <h4 className="count mb-3 text-2xl font-bold">
+                  Driver’s License
+                </h4>
 
                 <p className="txt text-sm leading-relaxed">
-                  Verified listings and trusted transactions for users across
-                  Nigeria.
+                  Processing, renewal, and update of driver’s licenses.
                 </p>
               </div>
 
               {/* CARD */}
-              <div className="card rounded-2xl border border-white/10 p-6">
-                <h4 className="count mb-3 text-4xl font-bold">24/7</h4>
+              <div className="card rounded-2xl border border-white/10 p-6 transition duration-300 hover:scale-[1.05]">
+                <h4 className="count mb-3 text-2xl font-bold">
+                  Ownership Transfer
+                </h4>
 
                 <p className="txt text-sm leading-relaxed">
-                  Access to premium vehicles and properties anytime, anywhere.
+                  Secure change of vehicle ownership and documentation.
                 </p>
               </div>
 
               {/* CARD */}
-              <div className="card rounded-2xl border border-white/10 p-6">
-                <h4 className="count mb-3 text-4xl font-bold">Smart</h4>
+              <div className="card rounded-2xl border border-white/10 p-6 transition duration-300 hover:scale-[1.05]">
+                <h4 className="count mb-3 text-2xl font-bold">
+                  New Registration
+                </h4>
 
                 <p className="txt text-sm leading-relaxed">
-                  Seamless browsing experience powered by modern web
-                  technologies.
+                  Vehicle registration and plate number processing services.
                 </p>
               </div>
 
               {/* CARD */}
-              <div className="card rounded-2xl border border-white/10 p-6">
-                <h4 className="count mb-3 text-4xl font-bold">Secure</h4>
+              <div className="card rounded-2xl border border-white/10 p-6 transition duration-300 hover:scale-[1.05]">
+                <h4 className="count mb-3 text-2xl font-bold">
+                  CMR & Tinted Permit
+                </h4>
 
                 <p className="txt text-sm leading-relaxed">
-                  Focused on reliability, transparency, and customer trust.
+                  Fast processing for CMR papers and tinted glass permits.
                 </p>
               </div>
             </div>
