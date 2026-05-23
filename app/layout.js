@@ -41,6 +41,22 @@ export default function RootLayout({ children }) {
 
         <Footer />
 
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-MPLS2G4LYR"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-MPLS2G4LYR');
+          `}
+        </Script>
+
         {/* Tawk.to Chat Script */}
         <Script id="tawk-to" strategy="afterInteractive">
           {`
