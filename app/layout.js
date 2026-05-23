@@ -50,25 +50,38 @@ export default function RootLayout({ children }) {
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
 
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
             gtag('config', 'G-MPLS2G4LYR');
           `}
         </Script>
 
-        {/* Tawk.to Chat Script */}
+        {/* Adsterra Ads */}
+        <Script
+          src="https://pl29530214.effectivecpmnetwork.com/2e/8e/ce/2e8ece65bdcc16628dcf5741a3ed2b7a.js"
+          strategy="afterInteractive"
+        />
+
+        {/* Tawk.to Live Chat */}
         <Script id="tawk-to" strategy="afterInteractive">
           {`
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-              var s1=document.createElement("script"),
-                  s0=document.getElementsByTagName("script")[0];
-              s1.async=true;
-              s1.src='https://embed.tawk.to/6a0b578c0a71ec1c34c486d2/default';
-              s1.charset='UTF-8';
-              s1.setAttribute('crossorigin','*');
-              s0.parentNode.insertBefore(s1,s0);
+            var Tawk_API = Tawk_API || {},
+                Tawk_LoadStart = new Date();
+
+            (function () {
+              var s1 = document.createElement("script"),
+                  s0 = document.getElementsByTagName("script")[0];
+
+              s1.async = true;
+              s1.src = "https://embed.tawk.to/6a0b578c0a71ec1c34c486d2/default";
+              s1.charset = "UTF-8";
+              s1.setAttribute("crossorigin", "*");
+
+              s0.parentNode.insertBefore(s1, s0);
             })();
           `}
         </Script>
