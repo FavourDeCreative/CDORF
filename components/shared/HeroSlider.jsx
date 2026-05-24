@@ -11,7 +11,7 @@ const slides = [
     button: "Explore Autos",
     href: "/autos",
     image:
-      "/benz.jpg",
+      "/cdorf.jpg",
     tag: "500+ Cars Available",
   },
 
