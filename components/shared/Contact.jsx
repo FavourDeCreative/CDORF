@@ -36,10 +36,10 @@ export default function ContactSection() {
 
     try {
       await emailjs.sendForm(
-        "service_aul9iei",
-        "template_tb1pq9l",
+        "service_6wv8twu",
+        "template_xum7r8p",
         formRef.current,
-        "PeRykO53f4rW46VbH",
+        "20c5K5pCz_Dj1Y_TS",
       );
 
       setStatus("success");
