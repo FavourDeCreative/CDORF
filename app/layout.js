@@ -60,9 +60,15 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        {/* Adsterra Ads */}
+        {/* Adsterra Direct Ads */}
         <Script
           src="https://pl29530214.effectivecpmnetwork.com/2e/8e/ce/2e8ece65bdcc16628dcf5741a3ed2b7a.js"
+          strategy="afterInteractive"
+        />
+
+        {/* Adsterra Popunder */}
+        <Script
+          src="https://pl29530215.effectivecpmnetwork.com/f4/04/9b/f4049b3505d323262a0207c973815de1.js"
           strategy="afterInteractive"
         />
 
